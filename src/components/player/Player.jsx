@@ -365,12 +365,7 @@ export default function Player({
       },
       customType: { m3u8: playM3u8 },
     });
-    art.on("resize", () => {
-      art.subtitle.style({
-        fontSize:
-          (art.width > 500 ? art.width * 0.02 : art.width * 0.03) + "px",
-      });
-    });
+
     art.on("ready", () => {
       const continueWatchingList = JSON.parse(localStorage.getItem("continueWatching")) || [];
       const currentEntry = continueWatchingList.find((item) => item.episodeId === episodeId);
